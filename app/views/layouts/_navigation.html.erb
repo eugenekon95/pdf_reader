@@ -14,6 +14,10 @@
           <li class="nav-item ml-lg-3">
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger text-white" %>
           </li>
+          <li class="nav-item ml-lg-3">
+           <%= link_to 'New Book', new_book_path, class: 'btn btn-success text-white' %>
+          </li>
+           
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "btn btn-info mr-2 text-white" %>

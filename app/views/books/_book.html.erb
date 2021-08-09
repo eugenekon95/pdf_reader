@@ -1,0 +1,16 @@
+      <%current_user.books.each do |book| %>
+        <div class="card mb-4">
+         <%= image_tag(book.image, height: '300', width: '750', class: "card-img-top")%>
+          <div class="card-body">
+            <h2 class="card-title"><%= book.title%></h2>
+            <p class="card-text"><%= book.description%></p>
+            <%= link_to 'Show', book, role: "button", class: "btn btn-primary text-white" %>
+            <%= link_to "Open the book", book.attachment, target: :_blank, :class => "btn btn-warning" %>
+            
+          </div>
+          <div class="card-footer text-muted">
+             Posted by <%= book.user.name %> 
+          
+          </div>
+        </div>
+         <% end %>

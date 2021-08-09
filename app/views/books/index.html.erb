@@ -6,22 +6,16 @@
       <div class="col-lg-4 mb-4">
 
         <h1 class="mt-5">Books</h1>
-
         <!-- Book -->
-        <% @books.each do |book| %>
-        <div class="card mb-4">
-         <%= image_tag(book.image, height: '300', width: '750', class: "card-img-top")%>
-          <div class="card-body">
-            <h2 class="card-title"><%= book.title%></h2>
-            <p class="card-text"><%= book.description%></p>
-            <%= link_to 'Show', book, role: "button", class: "btn btn-primary text-white" %>
+          <%if current_user%>
+            <% @books.each do |book| %>
+            <%= render "books/book" %>
+          <% end %>
+          <%else%>
+          <div class="alert alert-danger" role="alert">
+  Only registered users can read and manage books!
           </div>
-          <div class="card-footer text-muted">
-             Posted by <%= book.user.name %> 
-          
-          </div>
-        </div>
-         <% end %>
+        <% end %>
 
         <!-- Book -->
      
@@ -29,6 +23,6 @@
     <!-- /.row -->
 
   </div>
-
-   <%= link_to 'New Book', new_book_path, class: 'btn btn-success text-white' %>
+    
+  
   </div>
