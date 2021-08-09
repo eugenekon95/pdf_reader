@@ -1,29 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+ <p id="notice"><%= notice %></p>
+ <p id="alert"><%= alert %></p>
+    <div class="row">
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+      <!-- Book Content Column -->
+      <div class="col-lg-12">
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
+        <!-- Title -->
+        <h1 class="mt-5 text-center"><%= @book.title %></h1>
 
-<p>
-  <strong>Image:</strong>
-  <%= @book.image %>
-</p>
+        <!-- user -->
+        <div class="d-inline ">
+        <p class="lead">
+        Posted by <%= @book.user.name %> 
+        
+   
+        </p>
+         
+        </div>
+    
 
-<p>
-  <strong>Attachment:</strong>
-  <%= @book.attachment %>
-</p>
+        <hr>
 
-<p>
-  <strong>User:</strong>
-  <%= @book.user_id %>
-</p>
+        <hr>
 
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+        <!-- Preview Image -->
+        <div class ="d-flex justify-content-center"><%= image_tag(@book.image, height: '300', width: '550' )%></div>
+
+        <hr>
+
+        <!-- Book Content -->
+         
+        <p class="lead"><%= @book.title %></p>
+        <p><%= @book.description %></p>
+        <hr>
+        <%if current_user.id == @book.user_id %> 
+         <%= link_to 'Back', books_path, class: "btn btn-sm btn-dark text-white" %>
+         <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-warning text-white"%>
+         <%= link_to 'Delete', book_path(@book),
+                    method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger text-white" %>
+    <%end%> 
+        
+      
+    <!-- /.row -->
+
+  </div>
