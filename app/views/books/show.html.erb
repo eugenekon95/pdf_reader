@@ -2,54 +2,33 @@
  <p id="notice"><%= notice %></p>
  <p id="alert"><%= alert %></p>
     <div class="row">
-
       <!-- Book Content Column -->
       <div class="col-lg-12">
-
         <!-- Title -->
         <h1 class="mt-5 text-center"><%= @book.title %></h1>
-
         <!-- user -->
         <div class="d-inline ">
         <p class="lead">
-        Posted by <%= @book.user.name %> 
-        
-   
+        Added by <%= @book.user.name %> 
         </p>
-         
-        </div>
-    
-
-        <hr>
-
-        <hr>
-
-        <!-- Preview Image -->
-        <div class ="d-flex justify-content-center"><%= image_tag(@book.image, height: '300', width: '550' )%></div>
-
-        <hr>
-
-        <!-- Book Content -->
-         
-        <p class="lead"><%= @book.title %></p>
-        <p><%= @book.description %></p>
-
-      
-
-        <div class="embed-responsive embed-responsive-16by9">
-  <iframe class="embed-responsive-item" src=<%= url_for(@book.attachment) %>></iframe>
-        </div>
-     
-        <hr>
-
-        <%if current_user.id == @book.user_id %> 
+          <%if current_user.id == @book.user_id %> 
          <%= link_to 'Back', books_path, class: "btn btn-sm btn-dark text-white" %>
          <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-warning text-white"%>
          <%= link_to 'Delete', book_path(@book),
                     method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger text-white" %>
-    <%end%> 
+         <%end%> 
+        </div>
+        <hr>
+        <!-- Preview Image -->
+        <div class ="d-flex justify-content-center"><%= image_tag(@book.image, height: '300', width: '550' )%></div>
+        <hr>
+        <!-- Book Content -->
+        <p class="lead"><%= @book.title %></p>
+        <p><%= @book.description %></p>
+        <div class="embed-responsive embed-responsive-16by9">
+         <iframe class="embed-responsive-item" src=<%= url_for(@book.attachment) %>></iframe>
+        </div>
+        <hr>
         
-      
     <!-- /.row -->
-
   </div>

@@ -1,28 +1,17 @@
 <div class="container ">
-
-    <div class="row">
-
+<h1 class="mt-5 text-center">Books</h1>
+    <div class="d-flex flex-row">
       <!-- Books Entries Column -->
-      <div class="col-lg-4 mb-4">
-
-        <h1 class="mt-5">Books</h1>
         <!-- Book -->
           <%if current_user%>
-            <% @books.each do |book| %>
             <%= render "books/book" %>
-          <% end %>
           <%else%>
           <div class="alert alert-danger" role="alert">
-  Only registered users can read and manage books!
+          Only registered users can read and manage books!
           </div>
-        <% end %>
+        <% end %>  
 
         <!-- Book -->
-     
-  </div>
     <!-- /.row -->
-
   </div>
-    
-  
   </div>

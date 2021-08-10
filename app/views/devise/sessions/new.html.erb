@@ -5,17 +5,23 @@
         <div class="card-body">
           <h5 class="card-title text-center">Sign In</h5>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+               <% if flash[:alert] %>
+               <div class="alert alert-danger" role="alert">
+                  <%= flash[:alert] %>
+                </div>
+              
+              <% end %>
               
              <div class="form-label-group">
                 <label for="inputEmail">Email address</label>
-                <%= f.email_field :email, required: true, autocomplete: "email", type: "email",
+                <%= f.email_field :email, required: true, type: "email",
                                   class: "form-control", placeholder: "Email address" %>
               </div>
 
               <div class="form-label-group mb-3">
                 <label for="inputPassword">Password</label>
                
-                <%= f.password_field :password, autocomplete: "new-password", required: true, type: "password",
+                <%= f.password_field :password, required: true, type: "password",
                                      class: "form-control", placeholder: "Password"  %>
               </div>
 
