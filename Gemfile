@@ -22,11 +22,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#devise
+# devise
 gem 'devise'
-#pdfjs_viewer-rails
+# pdfjs_viewer-rails
 gem 'pdfjs_viewer-rails'
-#active-storage-validator
+# active-storage-validator
 gem 'activestorage-validator'
 
 # Use Active Storage variant
