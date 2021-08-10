@@ -34,9 +34,10 @@
         <p class="lead"><%= @book.title %></p>
         <p><%= @book.description %></p>
 
-        <div class="d-flex justify-content-center">
-         <iframe src=<%= url_for(@book.attachment) %>
- width="1000" height="700" style="border: none;"></iframe>
+      
+
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src=<%= url_for(@book.attachment) %>></iframe>
         </div>
      
         <hr>
