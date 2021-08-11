@@ -1,5 +1,5 @@
 # README
-## PDF Reader project
+ PDF Reader project
 # Requirements
 Ruby version 2.7.4
 Rails version 6.1.4
