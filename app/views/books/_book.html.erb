@@ -6,12 +6,15 @@
           <div class="card-body">
             <h2 class="card-title"><%= book.title%></h2>
             <p class="card-text"><%= book.description%></p>
-            <%= link_to 'Show', book, role: "button", class: "btn btn-primary text-white" %>
+            <%= link_to 'Show', book, role: "button", class: "btn btn-primary btn-sm text-white" %>
+            <%= link_to 'Edit', edit_book_path(book), class: "btn btn-sm btn-warning text-white"%>
+            <%= link_to 'Delete', book_path(book),
+                    method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger text-white" %>
             
             
           </div>
           <div class="card-footer text-muted">
-             Posted by <%= book.user.name %> 
+             Added by <%= book.user.name %> 
           
           </div>
         </div>
