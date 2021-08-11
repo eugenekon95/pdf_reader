@@ -9,8 +9,8 @@ Rails version 6.1.4
 3. Run yarn install
 4. Run rails db:create
 5. Run rails db:migrate
-6  Run rails server
-7  Go to http://localhost:3000/ 
+6.  Run rails server
+7.  Go to http://localhost:3000/ 
 # How to use PDF Reader
 1. Register. You may use any fake data for email address ex: user@example.com
 2. Create a new book or books. You may use any image link for book image ex: https://image.shutterstock.com/image-vector/srs-software-requirements-specification-acronym-600w-1892295421.jpg
